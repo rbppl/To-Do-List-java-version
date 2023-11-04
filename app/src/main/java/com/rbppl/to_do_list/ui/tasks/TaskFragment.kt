@@ -41,12 +41,12 @@ class TaskFragment : Fragment() , TaskEventListener {
     }
     private fun showAddTaskDialog() {
         val alertDialog = AlertDialog.Builder(requireContext())
-        alertDialog.setTitle("Добавить задачу")
+        alertDialog.setTitle("Add a task")
         val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_add_task, null)
         val taskTitleInput = dialogView.findViewById<EditText>(R.id.taskTitleInput)
         val taskDescriptionInput = dialogView.findViewById<EditText>(R.id.taskDescriptionInput)
         alertDialog.setView(dialogView)
-        alertDialog.setPositiveButton("Добавить") { _, _ ->
+        alertDialog.setPositiveButton("Add") { _, _ ->
             val taskTitle = taskTitleInput.text.toString()
             val taskDescription = taskDescriptionInput.text.toString()
             if (taskTitle.isNotBlank()) {
@@ -55,26 +55,26 @@ class TaskFragment : Fragment() , TaskEventListener {
             } else {
             }
         }
-        alertDialog.setNegativeButton("Отмена") { dialog, _ ->
+        alertDialog.setNegativeButton("Cancel") { dialog, _ ->
             dialog.dismiss()
         }
         alertDialog.show()
     }
     override fun onDeleteTask(task: Task) {
         val alertDialog = AlertDialog.Builder(binding.root.context)
-        alertDialog.setTitle("Удалить задачу")
-        alertDialog.setMessage("Вы уверены, что хотите удалить эту задачу?")
-        alertDialog.setPositiveButton("Да") { _, _ ->
+        alertDialog.setTitle("Delete task")
+        alertDialog.setMessage("Are you sure you want to delete this task?")
+        alertDialog.setPositiveButton("Yes") { _, _ ->
             taskViewModel.delete(task)
         }
-        alertDialog.setNegativeButton("Нет") { dialog, _ ->
+        alertDialog.setNegativeButton("No") { dialog, _ ->
             dialog.dismiss()
         }
         alertDialog.show()
     }
     override fun onEditTask(task: Task) {
         val alertDialog = AlertDialog.Builder(binding.root.context)
-        alertDialog.setTitle("Edit Tast")
+        alertDialog.setTitle("Edit task")
         val dialogView = LayoutInflater.from(binding.root.context).inflate(R.layout.dialog_edit_task, null)
         val taskTitleInput = dialogView.findViewById<EditText>(R.id.taskTitleInput)
         val taskDescriptionInput = dialogView.findViewById<EditText>(R.id.taskDescriptionInput)
