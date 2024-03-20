@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingEnd="8dp"
-    android:paddingStart="8dp"
-    android:orientation="vertical">
+    android:paddingStart="8dp">
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="0dp"
@@ -16,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
         tools:ignore="MissingConstraints" />
     <TextView
         android:textSize="18dp"

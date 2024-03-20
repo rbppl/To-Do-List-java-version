@@ -1,5 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.ToDoList" parent="Theme.Material3.DayNight">
-        <item name="color">@color/green</item>
-        <item name="colorAccent">@color/green</item>    </style>
+    <style name="Base.Theme.ToDoList.Night" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/dark_green</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+    <style name="AppTheme.Night" parent="Base.Theme.ToDoList.Night" />
 </resources>
